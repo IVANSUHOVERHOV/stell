@@ -6,21 +6,30 @@ class Student:
         self.name = name
         self.gladness = 50
         self.progress = 0
+        self.money = 100
         self.alive = True
 
     def to_study(self):
         print("Time to study")
         self.progress += 0.12
         self.gladness -= 3
+        self.money += 5
 
     def to_sleep(self):
         print(" I will sleep")
         self.gladness += 3
+        self.money -= 0.1
 
     def to_chill(self):
         print("Time to chill")
         self.progress -= 0.1
         self.gladness += 5
+        self.money -= 10
+
+    def to_work(self):
+        print("Time to work")
+        self.progress += 0.1
+        self.money += 20
 
 
     def is_alive(self):
@@ -32,6 +41,9 @@ class Student:
             self.alive = False
         elif self.progress >= 5:
             print("Passed externally...")
+            self.alive = False
+        elif self.money >= 10:
+            print("Bankrot")
             self.alive = False
 
 
@@ -50,6 +62,8 @@ class Student:
             self.to_sleep()
         elif live_cube == 3:
             self.to_chill()
+        elif live_cube == 4:
+            self.to_work()
         self.end_of_day()
         self.is_alive()
 

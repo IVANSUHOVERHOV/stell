@@ -24,7 +24,7 @@ class Student:
         print("Time to chill")
         self.progress -= 0.1
         self.gladness += 5
-        self.money -= 10
+        self.money -= 0.1
 
     def to_work(self):
         print("Time to work")
@@ -42,7 +42,7 @@ class Student:
         elif self.progress >= 5:
             print("Passed externally...")
             self.alive = False
-        elif self.money >= 10:
+        elif self.money <= 1:
             print("Bankrot")
             self.alive = False
 
@@ -50,6 +50,7 @@ class Student:
     def end_of_day(self):
         print(f"Gladness = {self.gladness}")
         print(f"Progress = {round(self.progress, 2)}")
+        print(f"money = {round(self.money, 2)}")
 
 
     def live(self, day):

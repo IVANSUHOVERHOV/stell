@@ -1,7 +1,7 @@
 def fun(x):
-    return x + 1
+    return x + 2
 
-w = fun(4)
+w = fun(3)
 if w == 5:
     print("w равно 5")
 else:
